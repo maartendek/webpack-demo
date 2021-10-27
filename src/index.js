@@ -4,6 +4,6 @@ const w = new World();
 
 console.log( w.hello() );
 
-w.isNice(false);
+w.nice = false;
 
 console.log(w.goodbye() );
