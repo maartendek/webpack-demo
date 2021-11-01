@@ -37,13 +37,24 @@ const config = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    !isProduction ? "style-loader" : MiniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader",
                 ],
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'svg-url-loader',
+                        options: {
+                            limit: 10000,
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: 'asset',
             },
 
