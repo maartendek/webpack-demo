@@ -10,8 +10,8 @@ export default class World {
     return `Goodbye ${this.nice ? 'beautiful': 'cruel'} World`; 
   }
 
-  isNice = (nice = true) => {
-    this.nice = nice;
+  set nice(b = true) {
+    this.nice = b;
   }
 
 }
